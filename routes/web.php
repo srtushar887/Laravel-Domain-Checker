@@ -49,6 +49,22 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
         Route::get('/domain-list', [\App\Http\Controllers\User\UserDomainController::class,'domain_list'])->name('user.domain.list');
         Route::get('/domain-create', [\App\Http\Controllers\User\UserDomainController::class,'domain_create'])->name('user.domain.create');
         Route::post('/domain-save', [\App\Http\Controllers\User\UserDomainController::class,'domain_save'])->name('user.domain.save');
+        Route::post('/domain-delete', [\App\Http\Controllers\User\UserDomainController::class,'domain_delete'])->name('user.domain.delete');
+        Route::post('/domain-folder-save', [\App\Http\Controllers\User\UserDomainController::class,'domain_folder_save'])->name('user.domain.folder.save');
+
+        //user domain folder
+        Route::get('/folders', [\App\Http\Controllers\User\UserDomainController::class,'folders'])->name('user.folder');
+        Route::get('/folder-create', [\App\Http\Controllers\User\UserDomainController::class,'folder_create'])->name('user.folder.create');
+        Route::post('/folder-save', [\App\Http\Controllers\User\UserDomainController::class,'folder_save'])->name('user.folder.save');
+        Route::post('/folder-update', [\App\Http\Controllers\User\UserDomainController::class,'folder_update'])->name('user.folder.update');
+        Route::post('/folder-delete', [\App\Http\Controllers\User\UserDomainController::class,'folder_delete'])->name('user.folder.delete');
+
+        //user whois checker
+        Route::get('/user-whois-checker', [\App\Http\Controllers\User\UserDomainController::class,'user_whois_checker'])->name('user.whois.checker');
+        Route::post('/user-whois-checdata', [\App\Http\Controllers\User\UserDomainController::class,'user_whois_checldata'])->name('user.whois.checkdata');
+
+        //upgrade account
+        Route::get('/user-upgrade-account', [\App\Http\Controllers\User\UserAccountController::class,'user_upgrade_account'])->name('user.updgrade.account');
     });
 });
 
@@ -64,5 +80,14 @@ Route::prefix('admin')->group(function (){
 Route::group(['middleware' => ['auth:admin']], function() {
     Route::prefix('admin')->group(function() {
         Route::get('/', [\App\Http\Controllers\Admin\AdminController::class,'index'])->name('admin.dashboard');
+
+        //users
+        Route::get('/users', [\App\Http\Controllers\Admin\AdminUserController::class,'users'])->name('admin.users');
+
+        //plans
+        Route::get('/plans', [\App\Http\Controllers\Admin\AdminPlanController::class,'plans'])->name('admin.plans');
+
+        //user bill
+        Route::get('/user-bill', [\App\Http\Controllers\Admin\AdminUserController::class,'user_bill'])->name('admin.users.bill');
     });
 });

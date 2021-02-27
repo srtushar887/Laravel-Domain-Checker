@@ -34,4 +34,10 @@ class UserAccountController extends Controller
     }
 
 
+    public function user_upgrade_account(){
+        return view('user.accounts.upgradeAccount');
+    }
+
+
+
 }

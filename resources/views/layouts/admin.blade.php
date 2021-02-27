@@ -1,222 +1,173 @@
 <!DOCTYPE html>
-<html lang="en-US" dir="ltr">
-
+<!--
+Template Name: NobleUI - Admin & Dashboard Template
+Author: NobleUI
+Website: https://www.nobleui.com
+Contact: nobleui123@gmail.com
+Purchase: https://1.envato.market/nobleui_admin
+License: You must have a valid license purchased only from above link or https://themeforest.net/user/nobleui/portfolio/ in order to legally use the theme for your project.
+-->
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-    <!-- ===============================================-->
-    <!--    Document Title-->
-    <!-- ===============================================-->
-    <title>Falcon | Dashboard &amp; Web App Templat</title>
-
-
-    <!-- ===============================================-->
-    <!--    Favicons-->
-    <!-- ===============================================-->
-    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('assets/admin/')}}/img/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('assets/admin/')}}/img/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('assets/admin/')}}/img/favicons/favicon-16x16.png">
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/admin/')}}/img/favicons/favicon.ico">
-    <link rel="manifest" href="{{asset('assets/admin/')}}/img/favicons/manifest.json">
-    <meta name="msapplication-TileImage" content="{{asset('assets/admin/')}}/img/favicons/mstile-150x150.png">
-    <meta name="theme-color" content="#ffffff">
-    <script src="{{asset('assets/admin/')}}/js/config.js"></script>
-
-
-    <!-- ===============================================-->
-    <!--    Stylesheets-->
-    <!-- ===============================================-->
-    <link href="{{asset('assets/admin/')}}/css/theme-rtl.min.css" rel="stylesheet" id="style-rtl">
-    <link href="{{asset('assets/admin/')}}/css/theme.min.css" rel="stylesheet" id="style-default">
-    <link href="{{asset('assets/admin/')}}/css/user-rtl.min.css" rel="stylesheet" id="user-style-rtl">
-    <link href="{{asset('assets/admin/')}}/css/user.min.css" rel="stylesheet" id="user-style-default">
-    <script>
-        var isRTL = JSON.parse(localStorage.getItem('isRTL'));
-        if (isRTL) {
-            var linkDefault = document.getElementById('style-default');
-            var userLinkDefault = document.getElementById('user-style-default');
-            linkDefault.setAttribute('disabled', true);
-            userLinkDefault.setAttribute('disabled', true);
-            document.querySelector('html').setAttribute('dir', 'rtl');
-        } else {
-            var linkRTL = document.getElementById('style-rtl');
-            var userLinkRTL = document.getElementById('user-style-rtl');
-            linkRTL.setAttribute('disabled', true);
-            userLinkRTL.setAttribute('disabled', true);
-        }
-    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NobleUI Responsive Bootstrap 4 Dashboard Template</title>
+    <!-- core:css -->
+    <link rel="stylesheet" href="{{asset('assets/admin/')}}/vendors/core/core.css">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <link rel="stylesheet" href="{{asset('assets/admin/')}}/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css">
+    <!-- end plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="{{asset('assets/admin/')}}/fonts/feather-font/css/iconfont.css">
+    <link rel="stylesheet" href="{{asset('assets/admin/')}}/vendors/flag-icon-css/css/flag-icon.min.css">
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="{{asset('assets/admin/')}}/css/demo_1/style.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="{{asset('assets/admin/')}}/images/favicon.png" />
 </head>
-
-
 <body>
+<div class="main-wrapper">
 
-<!-- ===============================================-->
-<!--    Main Content-->
-<!-- ===============================================-->
-<main class="main" id="top">
-    <div class="container" data-layout="container">
-        <script>
-            var isFluid = JSON.parse(localStorage.getItem('isFluid'));
-            if (isFluid) {
-                var container = document.querySelector('[data-layout]');
-                container.classList.remove('container');
-                container.classList.add('container-fluid');
-            }
-        </script>
-        <nav class="navbar navbar-light navbar-vertical navbar-expand-xl">
-            <script>
-                var navbarStyle = localStorage.getItem("navbarStyle");
-                if (navbarStyle && navbarStyle !== 'transparent') {
-                    document.querySelector('.navbar-vertical').classList.add(`navbar-${navbarStyle}`);
-                }
-            </script>
-            <div class="d-flex align-items-center">
-                <div class="toggle-icon-wrapper">
-
-                    <button class="btn navbar-toggler-humburger-icon navbar-vertical-toggle" data-bs-toggle="tooltip" data-bs-placement="left" title="Toggle Navigation"><span class="navbar-toggle-icon"><span class="toggle-line"></span></span></button>
-
-                </div><a class="navbar-brand" href="index.html">
-                    <div class="d-flex align-items-center py-3"><img class="me-2" src="{{asset('assets/admin/')}}/img/illustrations/falcon.png" alt="" width="40" /><span class="font-sans-serif">falcon</span>
-                    </div>
-                </a>
+    <!-- partial:partials/_sidebar.html -->
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <a href="#" class="sidebar-brand">
+                Noble<span>UI</span>
+            </a>
+            <div class="sidebar-toggler not-active">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-            <div class="collapse navbar-collapse" id="navbarVerticalCollapse">
-                <div class="navbar-vertical-content scrollbar">
-                    <ul class="navbar-nav flex-column mb-3" id="navbarVerticalNav">
-                        <li class="nav-item">
-                            <!-- label-->
-                            <div class="row mb-2">
-                                <div class="col-auto navbar-vertical-label">Dashboard
-                                </div>
-                                <div class="col ps-0">
-                                    <hr class="mb-0 navbar-vertical-divider" />
-                                </div>
-                            </div>
-                            <!-- parent pages--><a class="nav-link active" href="{{route('admin.dashboard')}}" role="button">
-                                <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-chart-pie"></span></span><span class="nav-link-text ps-1">Dashboard</span>
-                                </div>
-                            </a>
-                            <a class="nav-link" href="index.html" role="button">
-                                <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-chart-pie"></span></span><span class="nav-link-text ps-1">General Settings</span>
-                                </div>
-                            </a>
-                            <a class="nav-link" href="index.html" role="button">
-                                <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-chart-pie"></span></span><span class="nav-link-text ps-1">User Management</span>
-                                </div>
-                            </a>
+        </div>
+        <div class="sidebar-body">
+            <ul class="nav">
+                <li class="nav-item nav-category">Main</li>
+                <li class="nav-item">
+                    <a href="{{route('admin.dashboard')}}" class="nav-link">
+                        <i class="link-icon" data-feather="box"></i>
+                        <span class="link-title">Dashboard</span>
+                    </a>
+                </li>
 
-                            <a class="nav-link" href="index.html" role="button">
-                                <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-chart-pie"></span></span><span class="nav-link-text ps-1">User Domain Search</span>
-                                </div>
-                            </a>
-                            <!-- parent pages--><a class="nav-link" href="dashboard/dashboard-alt.html" role="button">
-                                <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-chart-area"></span></span><span class="nav-link-text ps-1">Alternate</span>
-                                </div>
-                            </a>
+                <li class="nav-item">
+                    <a href="{{route('admin.users')}}" class="nav-link">
+                        <i class="link-icon" data-feather="message-square"></i>
+                        <span class="link-title">Users</span>
+                    </a>
+                </li>
 
-                            <a class="nav-link dropdown-indicator" href="#email" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="email">
-                                <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-envelope-open"></span></span><span class="nav-link-text ps-1">Email</span>
-                                </div>
-                            </a>
-                            <!-- inner pages-->
-                            <ul class="nav collapse" id="email">
-                                <li class="nav-item"><a class="nav-link" href="email/inbox.html">
-                                        <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Inbox</span>
-                                        </div>
-                                    </a>
-                                    <!-- more inner pages-->
-                                </li>
-                                <li class="nav-item"><a class="nav-link" href="email/email-detail.html">
-                                        <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Email detail</span>
-                                        </div>
-                                    </a>
-                                    <!-- more inner pages-->
-                                </li>
-                                <li class="nav-item"><a class="nav-link" href="email/compose.html">
-                                        <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Compose</span>
-                                        </div>
-                                    </a>
-                                    <!-- more inner pages-->
-                                </li>
-                            </ul>
-                        </li>
-
-                    </ul>
-
-                </div>
-            </div>
-        </nav>
-        <div class="content">
-            <nav class="navbar navbar-light navbar-glass navbar-top navbar-expand">
-
-
-                <ul class="navbar-nav navbar-nav-icons ms-auto flex-row align-items-center">
+                <li class="nav-item">
+                    <a href="{{route('admin.users.bill')}}" class="nav-link">
+                        <i class="link-icon" data-feather="message-square"></i>
+                        <span class="link-title">Users Bill</span>
+                    </a>
+                </li>
 
 
 
-                    <li class="nav-item dropdown"><a class="nav-link pe-0" id="navbarDropdownUser" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <div class="avatar avatar-xl">
-                                <img class="rounded-circle" src="{{asset('assets/admin/')}}/img/team/3-thumb.png" alt="" />
+            </ul>
+        </div>
+    </nav>
 
-                            </div>
+    <!-- partial -->
+
+    <div class="page-wrapper">
+
+        <!-- partial:partials/_navbar.html -->
+        <nav class="navbar">
+            <a href="#" class="sidebar-toggler">
+                <i data-feather="menu"></i>
+            </a>
+            <div class="navbar-content">
+
+                <ul class="navbar-nav">
+
+                    <li class="nav-item dropdown nav-profile">
+                        <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="https://via.placeholder.com/30x30" alt="profile">
                         </a>
-                        <div class="dropdown-menu dropdown-menu-end py-0" aria-labelledby="navbarDropdownUser">
-                            <div class="bg-white dark__bg-1000 rounded-2 py-2">
-                                <a class="dropdown-item fw-bold text-warning" href="#!">{{Auth::user()->name}} </a>
-
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="pages/profile.html">Profile &amp; account</a>
-                                <a class="dropdown-item" href="pages/settings.html">Settings</a>
-                                <div class="dropdown-divider"></div>
-
-                                <a class="dropdown-item" href="{{route('admin.logout')}}">Logout</a>
+                        <div class="dropdown-menu" aria-labelledby="profileDropdown">
+                            <div class="dropdown-header d-flex flex-column align-items-center">
+                                <div class="figure mb-3">
+                                    <img src="https://via.placeholder.com/80x80" alt="">
+                                </div>
+                                <div class="info text-center">
+                                    <p class="name font-weight-bold mb-0">Amiah Burton</p>
+                                    <p class="email text-muted mb-3">amiahburton@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="dropdown-body">
+                                <ul class="profile-nav p-0 pt-3">
+                                    <li class="nav-item">
+                                        <a href="pages/general/profile.html" class="nav-link">
+                                            <i data-feather="user"></i>
+                                            <span>Profile</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="javascript:;" class="nav-link">
+                                            <i data-feather="edit"></i>
+                                            <span>Edit Profile</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="javascript:;" class="nav-link">
+                                            <i data-feather="repeat"></i>
+                                            <span>Switch User</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="javascript:;" class="nav-link">
+                                            <i data-feather="log-out"></i>
+                                            <span>Log Out</span>
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </li>
                 </ul>
-            </nav>
-           @yield('admin')
+            </div>
+        </nav>
+        <!-- partial -->
 
-            <footer>
-                <div class="row g-0 justify-content-between fs--1 mt-4 mb-3">
-                    <div class="col-12 col-sm-auto text-center">
-                        <p class="mb-0 text-600">Thank you for creating with Falcon <span class="d-none d-sm-inline-block">| </span><br class="d-sm-none" /> 2021 &copy; <a href="https://themewagon.com">Themewagon</a></p>
-                    </div>
-                    <div class="col-12 col-sm-auto text-center">
-                        <p class="mb-0 text-600">v3.0.0-beta1</p>
-                    </div>
-                </div>
-            </footer>
+        <div class="page-content">
+
+           @yield('admin')
         </div>
 
+        <!-- partial:partials/_footer.html -->
+        <footer class="footer d-flex flex-column flex-md-row align-items-center justify-content-between">
+            <p class="text-muted text-center text-md-left">Copyright © 2021 <a href="https://www.nobleui.com" target="_blank">NobleUI</a>. All rights reserved</p>
+            <p class="text-muted text-center text-md-left mb-0 d-none d-md-block">Handcrafted With <i class="mb-1 text-primary ml-1 icon-small" data-feather="heart"></i></p>
+        </footer>
+        <!-- partial -->
+
     </div>
-</main>
-<!-- ===============================================-->
-<!--    End of Main Content-->
-<!-- ===============================================-->
+</div>
 
-
-
-
-<!-- ===============================================-->
-<!--    JavaScripts-->
-<!-- ===============================================-->
-<script src="{{asset('assets/admin/')}}/vendors/popper/popper.min.js"></script>
-<script src="{{asset('assets/admin/')}}/vendors/bootstrap/bootstrap.min.js"></script>
-<script src="{{asset('assets/admin/')}}/vendors/anchorjs/anchor.min.js"></script>
-<script src="{{asset('assets/admin/')}}/vendors/is/is.min.js"></script>
-<script src="{{asset('assets/admin/')}}/vendors/echarts/echarts.min.js"></script>
-<script src="{{asset('assets/admin/')}}/vendors/progressbar/progressbar.min.js"></script>
-<script src="{{asset('assets/admin/')}}/vendors/fontawesome/all.min.js"></script>
-<script src="{{asset('assets/admin/')}}vendors/lodash/lodash.min.js"></script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
-<script src="{{asset('assets/admin/')}}/vendors/list.js/list.min.js"></script>
-<script src="{{asset('assets/admin/')}}/js/theme.js"></script>
-
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:100,200,300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
+<!-- core:js -->
+<script src="{{asset('assets/admin/')}}/vendors/core/core.js"></script>
+<!-- endinject -->
+<!-- plugin js for this page -->
+<script src="{{asset('assets/admin/')}}/vendors/chartjs/Chart.min.js"></script>
+<script src="{{asset('assets/admin/')}}/vendors/jquery.flot/jquery.flot.js"></script>
+<script src="{{asset('assets/admin/')}}/vendors/jquery.flot/jquery.flot.resize.js"></script>
+<script src="{{asset('assets/admin/')}}/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+<script src="{{asset('assets/admin/')}}/vendors/apexcharts/apexcharts.min.js"></script>
+<script src="{{asset('assets/admin/')}}/vendors/progressbar.js/progressbar.min.js"></script>
+<!-- end plugin js for this page -->
+<!-- inject:js -->
+<script src="{{asset('assets/admin/')}}/vendors/feather-icons/feather.min.js"></script>
+<script src="{{asset('assets/admin/')}}/js/template.js"></script>
+<!-- endinject -->
+<!-- custom js for this page -->
+<script src="{{asset('assets/admin/')}}/js/dashboard.js"></script>
+<script src="{{asset('assets/admin/')}}/js/datepicker.js"></script>
+<!-- end custom js for this page -->
 </body>
-
 </html>

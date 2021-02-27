@@ -1,100 +1,67 @@
 @extends('layouts.user')
 @section('user')
-    <!-- start page title -->
-    <div class="row">
-        <div class="col-12">
-            <div class="page-title-box d-flex align-items-center justify-content-between">
-                <h4 class="mb-0">Dashboard</h4>
+    <div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
+        <div>
+            <h4 class="mb-3 mb-md-0">Welcome to Dashboard</h4>
+        </div>
+        <div class="d-flex align-items-center flex-wrap text-nowrap">
 
-                <div class="page-title-right">
-                    <ol class="breadcrumb m-0">
-                        <li class="breadcrumb-item"><a href="javascript: void(0);">Nazox</a></li>
-                        <li class="breadcrumb-item active">Dashboard</li>
-                    </ol>
-                </div>
-
-            </div>
         </div>
     </div>
-    <!-- end page title -->
-
 
     <div class="row">
-        <div class="col-xl-12">
-            <div class="row">
-                <div class="col-md-4">
+        <div class="col-12 col-xl-12 stretch-card">
+            <div class="row flex-grow">
+                <div class="col-md-4 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <div class="media">
-                                <div class="media-body overflow-hidden">
-                                    <p class="text-truncate font-size-14 mb-2">Number of Sales</p>
-                                    <h4 class="mb-0">1452</h4>
-                                </div>
-                                <div class="text-primary">
-                                    <i class="ri-stack-line font-size-24"></i>
-                                </div>
+                            <div class="d-flex justify-content-between align-items-baseline">
+                                <h6 class="card-title mb-0">Accounts</h6>
                             </div>
-                        </div>
+                            <div class="row">
+                                <div class="col-6 col-md-12 col-xl-5">
+                                    <h3 class="mb-2">{{$api_acc_count}}</h3>
+                                </div>
 
-                        <div class="card-body border-top py-3">
-                            <div class="text-truncate">
-                                <span class="badge badge-soft-success font-size-11"><i class="mdi mdi-menu-up"> </i> 2.4% </span>
-                                <span class="text-muted ml-2">From previous period</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <div class="media">
-                                <div class="media-body overflow-hidden">
-                                    <p class="text-truncate font-size-14 mb-2">Sales Revenue</p>
-                                    <h4 class="mb-0">$ 38452</h4>
-                                </div>
-                                <div class="text-primary">
-                                    <i class="ri-store-2-line font-size-24"></i>
-                                </div>
+                            <div class="d-flex justify-content-between align-items-baseline">
+                                <h6 class="card-title mb-0">Domains</h6>
                             </div>
-                        </div>
-                        <div class="card-body border-top py-3">
-                            <div class="text-truncate">
-                                <span class="badge badge-soft-success font-size-11"><i class="mdi mdi-menu-up"> </i> 2.4% </span>
-                                <span class="text-muted ml-2">From previous period</span>
+                            <div class="row">
+                                <div class="col-6 col-md-12 col-xl-5">
+                                    <h3 class="mb-2">{{$domain_count}}</h3>
+                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <div class="media">
-                                <div class="media-body overflow-hidden">
-                                    <p class="text-truncate font-size-14 mb-2">Average Price</p>
-                                    <h4 class="mb-0">$ 15.4</h4>
-                                </div>
-                                <div class="text-primary">
-                                    <i class="ri-briefcase-4-line font-size-24"></i>
-                                </div>
+                            <div class="d-flex justify-content-between align-items-baseline">
+                                <h6 class="card-title mb-0">Plan</h6>
                             </div>
-                        </div>
-                        <div class="card-body border-top py-3">
-                            <div class="text-truncate">
-                                <span class="badge badge-soft-success font-size-11"><i class="mdi mdi-menu-up"> </i> 2.4% </span>
-                                <span class="text-muted ml-2">From previous period</span>
+                            <div class="row">
+                                <div class="col-6 col-md-12 col-xl-5">
+                                    <h3 class="mb-2">3,897</h3>
+                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- end row -->
-
-
         </div>
+    </div> <!-- row -->
 
 
-    </div>
-    <!-- end row -->
 
 
 @endsection

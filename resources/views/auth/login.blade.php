@@ -1,128 +1,88 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-
-<!-- Mirrored from themesbrand.com/minible/layouts/vertical/auth-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 18 Jan 2021 22:00:08 GMT -->
 <head>
-
-    <meta charset="utf-8" />
-    <title>Log In | Minible - Responsive Bootstrap 4 Admin Dashboard</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-    <meta content="Themesbrand" name="author" />
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="{{asset('assets/admin/')}}/images/favicon.ico">
-
-    <!-- Bootstrap Css -->
-    <link href="{{asset('assets/admin/home/')}}/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
-    <!-- Icons Css -->
-    <link href="{{asset('assets/admin/home/')}}/css/icons.min.css" rel="stylesheet" type="text/css" />
-    <!-- App Css-->
-    <link href="{{asset('assets/admin/home/')}}/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
-
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NobleUI Responsive Bootstrap 4 Dashboard Template</title>
+    <!-- core:css -->
+    <link rel="stylesheet" href="{{asset('assets/admin')}}/vendors/core/core.css">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <!-- end plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="{{asset('assets/admin')}}/fonts/feather-font/css/iconfont.css">
+    <link rel="stylesheet" href="{{asset('assets/admin')}}/vendors/flag-icon-css/css/flag-icon.min.css">
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="{{asset('assets/admin')}}/css/demo_1/style.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="{{asset('assets/admin')}}/images/favicon.png" />
 </head>
+<body>
+<div class="main-wrapper">
+    <div class="page-wrapper full-page">
+        <div class="page-content d-flex align-items-center justify-content-center">
 
-<body class="authentication-bg">
+            <div class="row w-100 mx-0 auth-page">
+                <div class="col-md-8 col-xl-6 mx-auto">
+                    <div class="card">
+                        <div class="row">
+                            <div class="col-md-4 pr-md-0">
+                                <div class="auth-left-wrapper">
 
-<div class="home-btn d-none d-sm-block">
-    <a href="index.html" class="text-dark"><i class="mdi mdi-home-variant h2"></i></a>
-</div>
-<div class="account-pages my-5 pt-sm-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="text-center">
-                    <a href="index.html" class="mb-5 d-block auth-logo">
-                        <img src="{{asset('assets/admin/')}}/images/logo-dark.png" alt="" height="22" class="logo logo-dark">
-                        <img src="{{asset('assets/admin/')}}/images/logo-light.png" alt="" height="22" class="logo logo-light">
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="row align-items-center justify-content-center">
-            <div class="col-md-8 col-lg-6 col-xl-5">
-                <div class="card">
-
-                    <div class="card-body p-4">
-                        <div class="text-center mt-2">
-                            <h5 class="text-primary">Welcome Back !</h5>
-                            <p class="text-muted">Sign in to continue to Minible.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-8 pl-md-0">
+                                <div class="auth-form-wrapper px-4 py-5">
+                                    <a href="#" class="noble-ui-logo d-block mb-2">Noble<span>UI</span></a>
+                                    <h5 class="text-muted font-weight-normal mb-4">Welcome back! Log in to your account.</h5>
+                                    <form class="forms-sample" action="{{route('user.login.submit')}}" method="post">
+                                        @csrf
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Email address</label>
+                                            <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Password</label>
+                                            <input type="password" name="password" class="form-control" id="exampleInputPassword1" autocomplete="current-password" placeholder="Password">
+                                        </div>
+                                        <div class="mt-3">
+                                            <button type="submit" class="btn btn-primary mr-2 mb-2 mb-md-0 text-white">Login</button>
+                                            <br>
+                                            <br>
+                                            <button type="button" class="btn btn-outline-primary btn-icon-text mb-2 mb-md-0">
+                                                <i class="btn-icon-prepend" data-feather="twitter"></i>
+                                                Login with twitter
+                                            </button>
+                                            <button type="button" class="btn btn-outline-primary btn-icon-text mb-2 mb-md-0">
+                                                <i class="btn-icon-prepend" data-feather="twitter"></i>
+                                                Login with twitter
+                                            </button>
+                                        </div>
+                                        <a href="{{route('user.register')}}" class="d-block mt-3 text-muted">Not a user? Sign up</a>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
-                        <div class="p-2 mt-4">
-                            <form action="{{route('user.login.submit')}}" method="post">
-                                @csrf
-                                <div class="form-group">
-                                    <label for="username">Email</label>
-                                    <input type="text" class="form-control" name="email" id="username" placeholder="Enter username">
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="float-right">
-                                        <a href="auth-recoverpw.html" class="text-muted">Forgot password?</a>
-                                    </div>
-                                    <label for="userpassword">Password</label>
-                                    <input type="password" class="form-control" name="password" id="userpassword" placeholder="Enter password">
-                                </div>
-
-
-                                <div class="mt-3 text-right">
-                                    <button class="btn btn-primary w-sm waves-effect waves-light" type="submit">Log In</button>
-                                </div>
-
-
-
-                                <div class="mt-4 text-center">
-                                    <div class="signin-other-title">
-                                        <h5 class="font-size-14 mb-3 title">Sign in with</h5>
-                                    </div>
-
-
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item">
-                                            <a href="javascript:void()" class="social-list-item bg-primary text-white border-primary">
-                                                <i class="mdi mdi-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="javascript:void()" class="social-list-item bg-danger text-white border-danger">
-                                                <i class="mdi mdi-google"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-
-                                <div class="mt-4 text-center">
-                                    <p class="mb-0">Don't have an account ? <a href="auth-register.html" class="font-weight-medium text-primary"> Signup now </a> </p>
-                                </div>
-                            </form>
-                        </div>
-
                     </div>
                 </div>
-
-                <div class="mt-5 text-center">
-                    <p>© 2020 Minible. Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand</p>
-                </div>
-
             </div>
+
         </div>
-        <!-- end row -->
     </div>
-    <!-- end container -->
 </div>
 
-<!-- JAVASCRIPT -->
-<script src="{{asset('assets/admin/home/')}}/libs/jquery/jquery.min.js"></script>
-<script src="{{asset('assets/admin/home/')}}/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="{{asset('assets/admin/home/')}}/libs/metismenu/metisMenu.min.js"></script>
-<script src="{{asset('assets/admin/home/')}}/libs/simplebar/simplebar.min.js"></script>
-<script src="{{asset('assets/admin/home/')}}/libs/node-waves/waves.min.js"></script>
-<script src="{{asset('assets/admin/home/')}}/libs/waypoints/lib/jquery.waypoints.min.js"></script>
-<script src="{{asset('assets/admin/home/')}}/libs/jquery.counterup/jquery.counterup.min.js"></script>
-
-<script src="{{asset('assets/admin/home/')}}/js/app.js"></script>
-
+<!-- core:js -->
+<script src="{{asset('assets/admin')}}/vendors/core/core.js"></script>
+<!-- endinject -->
+<!-- plugin js for this page -->
+<!-- end plugin js for this page -->
+<!-- inject:js -->
+<script src="{{asset('assets/admin')}}/vendors/feather-icons/feather.min.js"></script>
+<script src="{{asset('assets/admin')}}/js/template.js"></script>
+<!-- endinject -->
+<!-- custom js for this page -->
+<!-- end custom js for this page -->
 </body>
-
-<!-- Mirrored from themesbrand.com/minible/layouts/vertical/auth-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 18 Jan 2021 22:00:08 GMT -->
 </html>

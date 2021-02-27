@@ -1,209 +1,204 @@
-<!doctype html>
+<!DOCTYPE html>
+<!--
+Template Name: NobleUI - Admin & Dashboard Template
+Author: NobleUI
+Website: https://www.nobleui.com
+Contact: nobleui123@gmail.com
+Purchase: https://1.envato.market/nobleui_admin
+License: You must have a valid license purchased only from above link or https://themeforest.net/user/nobleui/portfolio/ in order to legally use the theme for your project.
+-->
 <html lang="en">
-
-
-<!-- Mirrored from themesdesign.in/nazox/layouts/vertical/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Feb 2021 12:47:03 GMT -->
 <head>
-
-    <meta charset="utf-8" />
-    <title>Dashboard | Nazox - Responsive Bootstrap 4 Admin Dashboard</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-    <meta content="Themesdesign" name="author" />
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="{{asset('assets/admin/')}}/images/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NobleUI Responsive Bootstrap 4 Dashboard Template</title>
+    <!-- core:css -->
+    <link rel="stylesheet" href="{{asset('assets/admin/')}}/vendors/core/core.css">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <link rel="stylesheet" href="{{asset('assets/admin/')}}/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css">
+    <!-- end plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="{{asset('assets/admin/')}}/fonts/feather-font/css/iconfont.css">
+    <link rel="stylesheet" href="{{asset('assets/admin/')}}/vendors/flag-icon-css/css/flag-icon.min.css">
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="{{asset('assets/admin/')}}/css/demo_1/style.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="{{asset('assets/admin/')}}/images/favicon.png" />
 
-    <!-- jquery.vectormap css -->
-    <link href="{{asset('assets/admin/')}}/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
-
-    <!-- DataTables -->
-    <link href="{{asset('assets/admin/')}}/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-
-    <!-- Responsive datatable examples -->
-    <link href="{{asset('assets/admin/')}}/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-
-    <!-- Bootstrap Css -->
-    <link href="{{asset('assets/admin/')}}/css/bootstrap.min.css"  rel="stylesheet" type="text/css" />
-    <!-- Icons Css -->
-    <link href="{{asset('assets/admin/')}}/css/icons.min.css" rel="stylesheet" type="text/css" />
-    <!-- App Css-->
-    <link href="{{asset('assets/admin/')}}/css/app.min.css"  rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/ce870e4a39.js" crossorigin="anonymous"></script>
 
 </head>
+<body>
+<div class="main-wrapper">
 
-<body data-sidebar="dark">
-
-<!-- Begin page -->
-<div id="layout-wrapper">
-
-    <header id="page-topbar">
-        <div class="navbar-header">
-            <div class="d-flex">
-                <!-- LOGO -->
-                <div class="navbar-brand-box">
-                    <a href="index.html" class="logo logo-dark">
-                                <span class="logo-sm">
-                                    <img src="{{asset('assets/admin/')}}/images/logo-sm-dark.png" alt="" height="22">
-                                </span>
-                        <span class="logo-lg">
-                                    <img src="{{asset('assets/admin/')}}/images/logo-dark.png" alt="" height="20">
-                                </span>
-                    </a>
-
-                    <a href="index.html" class="logo logo-light">
-                                <span class="logo-sm">
-                                    <img src="{{asset('assets/admin/')}}/images/logo-sm-light.png" alt="" height="22">
-                                </span>
-                        <span class="logo-lg">
-                                    <img src="{{asset('assets/admin/')}}/images/logo-light.png" alt="" height="20">
-                                </span>
-                    </a>
-                </div>
-
-                <button type="button" class="btn btn-sm px-3 font-size-24 header-item waves-effect" id="vertical-menu-btn">
-                    <i class="ri-menu-2-line align-middle"></i>
-                </button>
-
-                <!-- App Search-->
-
-
-
-            </div>
-
-            <div class="d-flex">
-
-
-                <div class="dropdown d-inline-block user-dropdown">
-                    <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img class="rounded-circle header-profile-user" src="{{asset('assets/admin/')}}/images/users/avatar-2.jpg"
-                             alt="Header Avatar">
-                        <span class="d-none d-xl-inline-block ml-1">Kevin</span>
-                        <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right">
-                        <!-- item-->
-                        <a class="dropdown-item" href="#"><i class="ri-user-line align-middle mr-1"></i> Profile</a>
-                        <a class="dropdown-item" href="#"><i class="ri-wallet-2-line align-middle mr-1"></i> My Wallet</a>
-                        <a class="dropdown-item d-block" href="#"><span class="badge badge-success float-right mt-1">11</span><i class="ri-settings-2-line align-middle mr-1"></i> Settings</a>
-                        <a class="dropdown-item" href="#"><i class="ri-lock-unlock-line align-middle mr-1"></i> Lock screen</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item text-danger" href="#"><i class="ri-shut-down-line align-middle mr-1 text-danger"></i> Logout</a>
-                    </div>
-                </div>
-
-
-
+    <!-- partial:partials/_sidebar.html -->
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <a href="#" class="sidebar-brand">
+                Noble<span>UI</span>
+            </a>
+            <div class="sidebar-toggler not-active">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
-    </header>
+        <div class="sidebar-body">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a href="{{route('dashboard')}}" class="nav-link">
+                        <i class="link-icon" data-feather="box"></i>
+                        <span class="link-title">Dashboard</span>
+                    </a>
+                </li>
 
-    <!-- ========== Left Sidebar Start ========== -->
-    <div class="vertical-menu">
 
-        <div data-simplebar class="h-100">
+                <li class="nav-item">
+                    <a href="{{route('user.api.account')}}" class="nav-link">
+                        <i class="link-icon" data-feather="message-square"></i>
+                        <span class="link-title">API Account</span>
+                    </a>
+                </li>
 
-            <!--- Sidemenu -->
-            <div id="sidebar-menu">
-                <!-- Left Menu Start -->
-                <ul class="metismenu list-unstyled" id="side-menu">
-                    <li class="menu-title">Menu</li>
+                <li class="nav-item">
+                    <a href="{{route('user.domain.list')}}" class="nav-link">
+                        <i class="link-icon" data-feather="box"></i>
+                        <span class="link-title">Domains</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('user.folder')}}" class="nav-link">
+                        <i class="link-icon" data-feather="box"></i>
+                        <span class="link-title">Folder</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('user.whois.checker')}}" class="nav-link">
+                        <i class="link-icon" data-feather="box"></i>
+                        <span class="link-title">Whois Checker</span>
+                    </a>
+                </li>
 
-                    <li>
-                        <a href="{{route('dashboard')}}" class="waves-effect">
-                            <i class="ri-dashboard-line"></i><span class="badge badge-pill badge-success float-right">3</span>
-                            <span>Dashboard</span>
+
+                <li class="nav-item">
+                    <a href="{{route('user.updgrade.account')}}" class="nav-link">
+                        <i class="link-icon" data-feather="box"></i>
+                        <span class="link-title">Upgrade Account</span>
+                    </a>
+                </li>
+
+
+
+
+            </ul>
+        </div>
+    </nav>
+
+    <!-- partial -->
+
+    <div class="page-wrapper">
+
+        <!-- partial:partials/_navbar.html -->
+        <nav class="navbar">
+            <a href="#" class="sidebar-toggler">
+                <i data-feather="menu"></i>
+            </a>
+            <div class="navbar-content">
+
+                <ul class="navbar-nav">
+
+                    <li class="nav-item dropdown nav-profile">
+                        <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="https://via.placeholder.com/30x30" alt="profile">
                         </a>
+                        <div class="dropdown-menu" aria-labelledby="profileDropdown">
+                            <div class="dropdown-header d-flex flex-column align-items-center">
+                                <div class="figure mb-3">
+                                    <img src="https://via.placeholder.com/80x80" alt="">
+                                </div>
+                                <div class="info text-center">
+                                    <p class="name font-weight-bold mb-0">Amiah Burton</p>
+                                    <p class="email text-muted mb-3">amiahburton@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="dropdown-body">
+                                <ul class="profile-nav p-0 pt-3">
+                                    <li class="nav-item">
+                                        <a href="pages/general/profile.html" class="nav-link">
+                                            <i data-feather="user"></i>
+                                            <span>Profile</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="javascript:;" class="nav-link">
+                                            <i data-feather="edit"></i>
+                                            <span>Edit Profile</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="javascript:;" class="nav-link">
+                                            <i data-feather="repeat"></i>
+                                            <span>Switch User</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="javascript:;" class="nav-link">
+                                            <i data-feather="log-out"></i>
+                                            <span>Log Out</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </li>
-
-                    <li>
-                        <a href="{{route('user.api.account')}}" class=" waves-effect">
-                            <i class="ri-calendar-2-line"></i>
-                            <span>API Account</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="{{route('user.domain.list')}}" class=" waves-effect">
-                            <i class="ri-chat-1-line"></i>
-                            <span>Domains</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="apps-chat.html" class=" waves-effect">
-                            <i class="ri-chat-1-line"></i>
-                            <span>Whois Checker</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="apps-chat.html" class=" waves-effect">
-                            <i class="ri-chat-1-line"></i>
-                            <span>Billing</span>
-                        </a>
-                    </li>
-
-
-
-
                 </ul>
             </div>
-            <!-- Sidebar -->
-        </div>
-    </div>
-    <!-- Left Sidebar End -->
-
-    <!-- ============================================================== -->
-    <!-- Start right Content here -->
-    <!-- ============================================================== -->
-    <div class="main-content">
+        </nav>
+        <!-- partial -->
 
         <div class="page-content">
-            <div class="container-fluid">
 
-                @yield('user')
-
-            </div> <!-- container-fluid -->
+           @yield('user')
         </div>
-        <!-- End Page-content -->
 
-        <footer class="footer">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <script>document.write(new Date().getFullYear())</script> © Nazox.
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="text-sm-right d-none d-sm-block">
-                            Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesdesign
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- partial:partials/_footer.html -->
+        <footer class="footer d-flex flex-column flex-md-row align-items-center justify-content-between">
+            <p class="text-muted text-center text-md-left">Copyright © 2021 <a href="https://www.nobleui.com" target="_blank">NobleUI</a>. All rights reserved</p>
+            <p class="text-muted text-center text-md-left mb-0 d-none d-md-block">Handcrafted With <i class="mb-1 text-primary ml-1 icon-small" data-feather="heart"></i></p>
         </footer>
+        <!-- partial -->
+
     </div>
-    <!-- end main content-->
-
 </div>
-<!-- END layout-wrapper -->
 
+<!-- core:js -->
+<script src="{{asset('assets/admin/')}}/vendors/core/core.js"></script>
+<!-- endinject -->
+<!-- plugin js for this page -->
+<script src="{{asset('assets/admin/')}}/vendors/chartjs/Chart.min.js"></script>
+<script src="{{asset('assets/admin/')}}/vendors/jquery.flot/jquery.flot.js"></script>
+<script src="{{asset('assets/admin/')}}/vendors/jquery.flot/jquery.flot.resize.js"></script>
+<script src="{{asset('assets/admin/')}}/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+<script src="{{asset('assets/admin/')}}/vendors/apexcharts/apexcharts.min.js"></script>
+<script src="{{asset('assets/admin/')}}/vendors/progressbar.js/progressbar.min.js"></script>
+<!-- end plugin js for this page -->
+<!-- inject:js -->
+<script src="{{asset('assets/admin/')}}/vendors/feather-icons/feather.min.js"></script>
+<script src="{{asset('assets/admin/')}}/js/template.js"></script>
+<!-- endinject -->
+<!-- custom js for this page -->
+<script src="{{asset('assets/admin/')}}/js/dashboard.js"></script>
+<script src="{{asset('assets/admin/')}}/js/datepicker.js"></script>
 
-<!-- Right bar overlay-->
-<div class="rightbar-overlay"></div>
-
-<!-- JAVASCRIPT -->
-<script src="{{asset('assets/admin/')}}/libs/jquery/jquery.min.js"></script>
-<script src="{{asset('assets/admin/')}}/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="{{asset('assets/admin/')}}/libs/metismenu/metisMenu.min.js"></script>
-<script src="{{asset('assets/admin/')}}/libs/simplebar/simplebar.min.js"></script>
-<script src="{{asset('assets/admin/')}}/libs/node-waves/waves.min.js"></script>
-
-
-<script src="{{asset('assets/admin/')}}/js/pages/dashboard.init.js"></script>
-
-<script src="{{asset('assets/admin/')}}/js/app.js"></script>
 @yield('js')
 
-</body>
 
-<!-- Mirrored from themesdesign.in/nazox/layouts/vertical/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Feb 2021 12:49:05 GMT -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+@include('layouts.message')
+
+<!-- end custom js for this page -->
+</body>
 </html>
