@@ -26,14 +26,43 @@ class UserAccountController extends Controller
 
     public function api_accounts_save(Request $request)
     {
-        $new_acc = new user_api_account();
-        $new_acc->user_id = Auth::user()->id;
-        $new_acc->account_type = $request->account_type;
-        $new_acc->account_name = $request->account_name;
-        $new_acc->user_name = $request->user_name;
-        $new_acc->api_key = $request->api_key;
-        $new_acc->api_secret = $request->api_secret;
-        $new_acc->save();
+
+
+
+        $API_KEY = "e5CYUvugiyZ1_BXr8VKPFsUqu9ZoFR1x8Hv";
+        $API_SECRET = "5qcqZfauNQnZ4eyeKmQmq9";
+
+
+        $url = "https://api.godaddy.com/v1/domains/?statuses=ACTIVE&limit=5";
+
+        $header = array(
+            'Authorization: sso-key '.$API_KEY.':'.$API_SECRET.''
+        );
+        $ch = curl_init();
+        $timeout=60;
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER,false);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+        $result = curl_exec($ch);
+        curl_close($ch);
+        $domainList = json_decode($result, true);
+
+        return $domainList;
+
+//        $new_acc = new user_api_account();
+//        $new_acc->user_id = Auth::user()->id;
+//        $new_acc->account_type = $request->account_type;
+//        $new_acc->account_name = $request->account_name;
+//        $new_acc->user_name = $request->user_name;
+//        $new_acc->api_key = $request->api_key;
+//        $new_acc->api_secret = $request->api_secret;
+//        $new_acc->save();
+
+
+
         return back()->with('success','Account Successfully Added');
     }
 
@@ -52,7 +81,6 @@ class UserAccountController extends Controller
         }elseif ($request->pay_type == 2){
             $type = $request->pay_type;
             $amount = $request->amount;
-
             return redirect(route('user.payment.paypal',['type'=>$type,'amount'=>$amount]));
         }
     }
