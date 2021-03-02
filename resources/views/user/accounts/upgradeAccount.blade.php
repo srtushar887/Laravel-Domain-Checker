@@ -99,14 +99,37 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
+                <form action="{{route('user.updgrade.account.payment')}}" method="post">
+                    @csrf
                 <div class="modal-body">
                     <label style="font-size: 25px;"><strong>Plan :</strong> Pro</label><br>
                     <label style="font-size: 25px;"><strong>Billing Cycle :</strong> Yearly</label>
+                    <div class="form-check form-check-flat form-check-primary mt-0">
+                        <label class="form-check-label">
+                            <input type="radio" value="1" name="pay_type" class="form-check-input folderchecked">
+                            Pay With Stripe
+                            <i class="input-frame"></i></label>
+                    </div>
+                    <div class="form-check form-check-flat form-check-primary mt-0">
+                        <label class="form-check-label">
+                            <input type="radio" value="2" name="pay_type" class="form-check-input folderchecked">
+                            Pay With Paypal
+                            <i class="input-frame"></i></label>
+                    </div>
+                    <div class="form-check form-check-flat form-check-primary mt-0">
+                        <label class="form-check-label">
+                            <input type="radio" value="3" name="pay_type" class="form-check-input folderchecked">
+                            Pay With Roser Pay
+                            <i class="input-frame"></i></label>
+                    </div>
+                    <button type="button" class="btn btn-secondary">Total Amount : $12</button>
+                    <input type="hidden" value="12" name="amount">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="submit" class="btn btn-primary">Make Payment</button>
                 </div>
+                </form>
             </div>
         </div>
     </div>
@@ -120,14 +143,37 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
+                <form action="{{route('user.updgrade.account.payment')}}" method="post">
+                    @csrf
                 <div class="modal-body">
                     <label style="font-size: 25px;"><strong>Plan :</strong> Pro Plus</label><br>
                     <label style="font-size: 25px;"><strong>Billing Cycle :</strong> Yearly</label>
+                    <div class="form-check form-check-flat form-check-primary mt-0">
+                        <label class="form-check-label">
+                            <input type="radio" value="1" name="pay_type" class="form-check-input folderchecked">
+                            Pay With Stripe
+                            <i class="input-frame"></i></label>
+                    </div>
+                    <div class="form-check form-check-flat form-check-primary mt-0">
+                        <label class="form-check-label">
+                            <input type="radio" value="2" name="pay_type" class="form-check-input folderchecked">
+                            Pay With Paypal
+                            <i class="input-frame"></i></label>
+                    </div>
+                    <div class="form-check form-check-flat form-check-primary mt-0">
+                        <label class="form-check-label">
+                            <input type="radio" value="3" name="pay_type" class="form-check-input folderchecked">
+                            Pay With Roser Pay
+                            <i class="input-frame"></i></label>
+                    </div>
+                    <button type="button" class="btn btn-secondary">Total Amount : $24</button>
+                    <input type="hidden" value="24" name="amount">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
                 </div>
+                </form>
             </div>
         </div>
     </div>

@@ -65,6 +65,16 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
 
         //upgrade account
         Route::get('/user-upgrade-account', [\App\Http\Controllers\User\UserAccountController::class,'user_upgrade_account'])->name('user.updgrade.account');
+        Route::post('/user-upgrade-account-payment', [\App\Http\Controllers\User\UserAccountController::class,'user_upgrade_account_payment'])->name('user.updgrade.account.payment');
+
+        //stripe payment
+        Route::get('/user-payment-stripe/{type}/{amount}', [\App\Http\Controllers\User\UserAccountController::class,'user_payment_stripe'])->name('user.payment.stripe');
+        Route::post('/user-payment-stripe-save', [\App\Http\Controllers\User\UserAccountController::class,'user_payment_stripe_save'])->name('user.payment.stripe.save');
+
+        //paypal payment
+        Route::get('/user-payment-paypal/{type}/{amount}', [\App\Http\Controllers\User\UserAccountController::class,'user_payment_paypal'])->name('user.payment.paypal');
+        Route::get('/user-payment-paypal-success', [\App\Http\Controllers\User\UserAccountController::class,'user_payment_paypal'])->name('payment.success');
+        Route::get('/user-payment-paypal-cancel', [\App\Http\Controllers\User\UserAccountController::class,'user_payment_paypal'])->name('payment.cancel');
     });
 });
 
