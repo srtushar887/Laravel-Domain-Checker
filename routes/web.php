@@ -44,6 +44,9 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
         Route::get('/api-accounts', [\App\Http\Controllers\User\UserAccountController::class,'api_accounts'])->name('user.api.account');
         Route::get('/api-account-create', [\App\Http\Controllers\User\UserAccountController::class,'api_accounts_create'])->name('user.api.account.create');
         Route::post('/api-account-save', [\App\Http\Controllers\User\UserAccountController::class,'api_accounts_save'])->name('user.api.account.save');
+        Route::get('/api-account-domain-list', [\App\Http\Controllers\User\UserAccountController::class,'api_accounts_domain_list'])->name('user.apiaccount.domain.list');
+        Route::post('/api-account-domain-save', [\App\Http\Controllers\User\UserAccountController::class,'api_accounts_domain_save'])->name('user.api.acount.domain.save');
+        Route::post('/api-account-update-name', [\App\Http\Controllers\User\UserAccountController::class,'api_accounts_update_name'])->name('user.api.acount.update.name');
 
         //user domain list
         Route::get('/domain-list', [\App\Http\Controllers\User\UserDomainController::class,'domain_list'])->name('user.domain.list');
